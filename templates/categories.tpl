@@ -7,7 +7,7 @@
 
 	<!-- IF !loggedIn -->
 		 <div class="owl" style="">
-        	<img src="../screenshot.png" alt="" width="44" height="400" />
+
          </div>
         <!-- ENDIF !loggedIn -->
 
