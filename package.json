@@ -1,6 +1,6 @@
 {
   "name": "nodebb-theme-quickstart-rmt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enter a description here",
   "main": "theme.less",
   "keywords": [
