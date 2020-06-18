@@ -117,6 +117,16 @@
 									<i class="fa fa-fw fa-gear"></i> <span>[[user:settings]]</span>
 								</a>
 							</li>
+							<li>
+                            	<a href="{relative_path}/privacy">
+                            		<i class="fa fa-fw fa-shield"></i> <span>Privacy</span>
+                            	</a>
+                            </li>
+                            <li>
+                                <a href="{relative_path}/terms">
+                                     <i class="fa fa-fw fa-file-text"></i> <span>Terms and Conditions</span>
+                                </a>
+                            </li>
 							<!-- IF showModMenu -->
 							<li role="presentation" class="divider"></li>
 							<li class="dropdown-header">[[pages:moderator-tools]]</li>
