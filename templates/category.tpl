@@ -85,9 +85,9 @@
 		<p>
 			<a href="{config.relative_path}/user/{../user.userslug}">
 				<!-- IF ../user.picture -->
-				<img class="user-img" title="{../user.fullname}" alt="{../user.fullname}" src="{../user.picture}">
+				<img class="user-img" title="<!-- IF posts.user.fullname -->{../user.fullname}<!-- ELSE -->{../user.username}<!-- ENDIF posts.user.fullname -->" alt="{../user.fullname}" src="{../user.picture}">
 				<!-- ELSE -->
-				<span class="user-icon user-img" title="{../user.fullname}" style="background-color: {../user.icon:bgColor};">{../user.icon:text}</span>
+				<span class="user-icon user-img" title="<!-- IF posts.user.fullname -->{../user.fullname}<!-- ELSE -->{../user.username}<!-- ENDIF posts.user.fullname -->" style="background-color: {../user.icon:bgColor};">{../user.icon:text}</span>
 				<!-- ENDIF ../user.picture -->
 			</a>
 			<a class="permalink" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->">
@@ -276,7 +276,7 @@
 		<meta itemprop="name" content="{function.stripTags, title}">
 
 		<div class="col-md-6 col-sm-9 col-xs-10 content">
-			<div class="avatar pull-left" title="{topics.user.fullname}">
+			<div class="avatar pull-left" title="<!-- IF topics.user.fullname -->{topics.user.fullname}<!-- ELSE -->{topics.user.username}<!-- ENDIF topics.user.fullname -->">
 				<!-- IF showSelect -->
 				<div class="select" component="topic/select">
 					<!-- IF topics.thumb -->
@@ -335,7 +335,7 @@
 				</span>
 				<!-- ENDIF topics.tags.length -->
 
-				<small class="hidden-xs"><span class="timeago" title="{topics.timestampISO}"></span> &bull; <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.fullname}</a></small>
+				<small class="hidden-xs"><span class="timeago" title="{topics.timestampISO}"></span> &bull; <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->"><!-- IF topics.user.fullname -->{topics.user.fullname}<!-- ELSE -->{topics.user.username}<!-- ENDIF topics.user.fullname --></a></small>
 				<small class="visible-xs-inline">
 					<i class="fa fa-reply"></i> &nbsp;
 					<!-- IF topics.teaser.timestamp -->
@@ -379,9 +379,9 @@
 				<p>
 					<a href="{config.relative_path}/user/{topics.teaser.user.userslug}">
 						<!-- IF topics.teaser.user.picture -->
-						<img title="{topics.teaser.user.fullname}" class="user-img not-responsive" src="{topics.teaser.user.picture}" />
+						<img title="<!-- IF topics.teaser.user.fullname -->{topics.teaser.user.fullname<!-- ELSE -->{topics.teaser.user.username}<!-- ENDIF topics.teaser.user.fullname -->" class="user-img not-responsive" src="{topics.teaser.user.picture}" />
 						<!-- ELSE -->
-						<span title="{topics.teaser.user.fullname}" class="user-icon user-img" style="background-color: {topics.teaser.user.icon:bgColor};">{topics.teaser.user.icon:text}</span>
+						<span title="<!-- IF topics.teaser.user.fullname -->{topics.teaser.user.fullname}<!-- ELSE -->{topics.teaser.user.username}<!-- ENDIF topics.teaser.user.fullname -->" class="user-icon user-img" style="background-color: {topics.teaser.user.icon:bgColor};">{topics.teaser.user.icon:text}</span>
 						<!-- ENDIF topics.teaser.user.picture -->
 					</a>
 					<a class="permalink" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
